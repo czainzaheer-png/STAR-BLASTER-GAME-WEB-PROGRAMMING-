@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>Star Blaster — HTML5 Space Shooter</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="game-container">
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div class="hud-item">SCORE <span id="scoreVal">0</span></div>
+      <div class="hud-item">HI <span id="highScoreVal">0</span></div>
+      <div class="hud-item">WAVE <span id="waveVal">1</span></div>
+      <div class="hud-item" id="livesWrap">LIVES <span id="livesVal">❤❤❤</span></div>
+      <button id="pauseBtn" title="Pause">⏸</button>
+      <button id="muteBtn" title="Mute">🔊</button>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="overlay">
+      <h1>STAR<span>BLASTER</span></h1>
+      <p class="tagline">Defend the last colony. Survive the waves.</p>
+      <button class="btn primary" id="startBtn">START GAME</button>
+      <button class="btn" id="howToBtn">HOW TO PLAY</button>
+      <div class="highscore-preview">High Score: <span id="startHighScore">0</span></div>
+    </div>
+
+    <!-- How To Play -->
+    <div id="howToScreen" class="overlay hidden">
+      <h2>HOW TO PLAY</h2>
+      <ul class="howto-list">
+        <li><strong>Move:</strong> Arrow Keys / A,D or Mouse / Touch drag</li>
+        <li><strong>Shoot:</strong> Space / Click / Auto-fire on touch</li>
+        <li><strong>Pause:</strong> P or ⏸ button</li>
+        <li><strong>Power-ups:</strong> Shield 🛡, Rapid Fire ⚡, Multi-shot ✳, Extra Life ❤</li>
+        <li>Destroy enemies to score. Don't let them reach the bottom or hit you!</li>
+        <li>Every 5 waves a tougher <strong>Boss</strong> appears.</li>
+      </ul>
+      <button class="btn primary" id="backBtn">BACK</button>
+    </div>
+
+    <!-- Pause Screen -->
+    <div id="pauseScreen" class="overlay hidden">
+      <h2>PAUSED</h2>
+      <button class="btn primary" id="resumeBtn">RESUME</button>
+      <button class="btn" id="restartFromPauseBtn">RESTART</button>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="overlay hidden">
+      <h2>GAME OVER</h2>
+      <p class="final-score">Score: <span id="finalScore">0</span></p>
+      <p class="new-high hidden" id="newHighBadge">🏆 NEW HIGH SCORE!</p>
+      <button class="btn primary" id="restartBtn">PLAY AGAIN</button>
+    </div>
+
+    <!-- Wave banner -->
+    <div id="waveBanner" class="hidden"></div>
+
+    <!-- Touch controls (mobile) -->
+    <div id="touchControls">
+      <div id="touchStick"><div id="touchStickKnob"></div></div>
+      <button id="touchFire">FIRE</button>
+    </div>
+
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
